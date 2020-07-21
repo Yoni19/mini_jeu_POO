@@ -68,10 +68,10 @@ class Game
 			if option.to_i < @enemies_in_sight.size
 				@human_player.attacks(@enemies_in_sight[option.to_i])
 			else
-				puts "Option non valide, tu attaques le vide"
+				puts "Option non valide, tu attaques le vide, t'es un peu con"
 			end
 		else
-			puts "Option non valide, tu perds un tour"
+			puts "Option non valide, tu perds un tour, DOMMAGE"
 		end
 		@enemies_in_sight.each do |enemi|
 			if enemi.life_points <= 0
@@ -107,7 +107,7 @@ class Game
 	end
 	def new_players_in_sight
 		if @enemies_in_sight.size >= 6
-			puts "Tous les joueurs sont déjà en vue"
+			puts "Tous les joueurs sont déjà à portée"
 		else
 			e = rand(1..6)
 			if e == 1
@@ -130,7 +130,7 @@ class Game
 	if @human_player.life_points > 0
 		puts "BRAVO ! TU AS GAGNE !"
 	else
-		puts "Loser ! Tu as perdu !"
+		puts "Loser ! Tu as perdu ! Mais tu t'es bien amusé non ?"
 	end
 end
 end
